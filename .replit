@@ -12,7 +12,7 @@ publicDir = "dist/public"
 
 [[deployment.rewrites]]
 from = "/*"
-to = "/public/index.html"
+to = "/index.html"
 
 [[ports]]
 localPort = 5000
