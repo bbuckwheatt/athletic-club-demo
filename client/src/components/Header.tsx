@@ -8,6 +8,17 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [location, setLocation] = useLocation();
 
+  const scrollToTop = () => {
+    if (location !== '/') {
+      setLocation('/');
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 100);
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   const scrollToSection = (sectionId: string) => {
     // If not on homepage, navigate there first
     if (location !== '/') {
@@ -39,16 +50,24 @@ export function Header() {
       <header className="sticky top-0 z-50 bg-background border-b border-border">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
-            <Link href="/" className="flex items-center gap-2 hover-elevate active-elevate-2 rounded-md px-3 py-2 -mx-3 -my-2" data-testid="link-home">
+            <button
+              onClick={scrollToTop}
+              className="flex items-center gap-2 hover-elevate active-elevate-2 rounded-md px-3 py-2 -mx-3 -my-2 cursor-pointer"
+              data-testid="link-home"
+            >
               <div className="text-2xl font-bold text-primary">
                 Solo Stove
               </div>
-            </Link>
+            </button>
 
             <nav className="hidden md:flex items-center gap-6">
-              <Link href="/" className="text-sm font-medium hover:text-primary transition-colors" data-testid="link-nav-home">
+              <button
+                onClick={scrollToTop}
+                className="text-sm font-medium hover:text-primary transition-colors cursor-pointer"
+                data-testid="link-nav-home"
+              >
                 Home
-              </Link>
+              </button>
               <button
                 onClick={() => scrollToSection('products')}
                 className="text-sm font-medium hover:text-primary transition-colors cursor-pointer"
@@ -85,14 +104,16 @@ export function Header() {
         {mobileMenuOpen && (
           <div className="md:hidden border-t border-border bg-background">
             <nav className="container mx-auto px-4 py-4 flex flex-col gap-4">
-              <Link
-                href="/"
-                className="text-sm font-medium hover:text-primary transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
+              <button
+                onClick={() => {
+                  scrollToTop();
+                  setMobileMenuOpen(false);
+                }}
+                className="text-sm font-medium hover:text-primary transition-colors text-left"
                 data-testid="link-mobile-home"
               >
                 Home
-              </Link>
+              </button>
               <button
                 onClick={() => {
                   scrollToSection('products');
