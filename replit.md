@@ -26,12 +26,22 @@ Preferred communication style: Simple, everyday language.
 
 **State Management**
 - TanStack Query (React Query) for server state management
-- No global client state library (keeping complexity minimal for demo purposes)
+- React Context API for shopping cart state management (CartContext)
+- localStorage for cart persistence across page refreshes
 - Query client configured with conservative refetch policies (staleTime: Infinity, no window focus refetch)
+
+**Shopping Cart System**
+- Client-side only implementation (no backend required)
+- CartContext provides: addToCart, removeFromCart, updateQuantity, clearCart, getItemCount, getSubtotal
+- localStorage persistence with key 'solostove-cart' for cart data
+- CartSheet component (Radix UI Sheet) displays cart items, quantity controls, subtotal
+- Real-time cart count badge in header
+- Toast notifications for cart actions
+- Clickable cart items navigate to product detail pages
 
 **Data Layer**
 - Static product data defined in component files (no database queries for demo)
-- Zod schemas for runtime type validation of product/category data
+- Zod schemas for runtime type validation of product/category/cart data
 - Type-safe data models shared between client and server via `@shared` directory
 
 ### Backend Architecture
