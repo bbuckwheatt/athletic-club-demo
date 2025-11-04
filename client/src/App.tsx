@@ -4,7 +4,6 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { CartProvider } from "@/contexts/CartContext";
-import { CustomGPTRefresher } from "@/components/CustomGPTRefresher";
 import HomePage from "@/pages/HomePage";
 import ProductPage from "@/pages/ProductPage";
 import NotFound from "@/pages/not-found";
@@ -24,7 +23,6 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <CartProvider>
-          <CustomGPTRefresher />
           <Toaster />
           <Router />
         </CartProvider>

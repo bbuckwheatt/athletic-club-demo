@@ -1,4 +1,3 @@
-import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CartSheet } from "@/components/CartSheet";
@@ -6,38 +5,6 @@ import { useState } from "react";
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [location, setLocation] = useLocation();
-
-  const scrollToTop = () => {
-    if (location !== '/') {
-      setLocation('/');
-      setTimeout(() => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }, 100);
-    } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  };
-
-  const scrollToSection = (sectionId: string) => {
-    // If not on homepage, navigate there first
-    if (location !== '/') {
-      setLocation('/');
-      // Wait for navigation, then scroll
-      setTimeout(() => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      }, 100);
-    } else {
-      // Already on homepage, just scroll
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }
-  };
 
   return (
     <>
@@ -50,38 +17,38 @@ export function Header() {
       <header className="sticky top-0 z-50 bg-background border-b border-border">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
-            <button
-              onClick={scrollToTop}
-              className="flex items-center gap-2 hover-elevate active-elevate-2 rounded-md px-3 py-2 -mx-3 -my-2 cursor-pointer"
+            <a
+              href="/"
+              className="flex items-center gap-2 hover-elevate active-elevate-2 rounded-md px-3 py-2 -mx-3 -my-2"
               data-testid="link-home"
             >
               <div className="text-2xl font-bold text-primary">
                 Solo Stove
               </div>
-            </button>
+            </a>
 
             <nav className="hidden md:flex items-center gap-6">
-              <button
-                onClick={scrollToTop}
-                className="text-sm font-medium hover:text-primary transition-colors cursor-pointer"
+              <a
+                href="/"
+                className="text-sm font-medium hover:text-primary transition-colors"
                 data-testid="link-nav-home"
               >
                 Home
-              </button>
-              <button
-                onClick={() => scrollToSection('products')}
-                className="text-sm font-medium hover:text-primary transition-colors cursor-pointer"
+              </a>
+              <a
+                href="/#products"
+                className="text-sm font-medium hover:text-primary transition-colors"
                 data-testid="link-nav-products"
               >
                 Products
-              </button>
-              <button
-                onClick={() => scrollToSection('categories')}
-                className="text-sm font-medium hover:text-primary transition-colors cursor-pointer"
+              </a>
+              <a
+                href="/#categories"
+                className="text-sm font-medium hover:text-primary transition-colors"
                 data-testid="link-nav-categories"
               >
                 Categories
-              </button>
+              </a>
             </nav>
 
             <div className="flex items-center gap-4">
@@ -104,36 +71,27 @@ export function Header() {
         {mobileMenuOpen && (
           <div className="md:hidden border-t border-border bg-background">
             <nav className="container mx-auto px-4 py-4 flex flex-col gap-4">
-              <button
-                onClick={() => {
-                  scrollToTop();
-                  setMobileMenuOpen(false);
-                }}
-                className="text-sm font-medium hover:text-primary transition-colors text-left"
+              <a
+                href="/"
+                className="text-sm font-medium hover:text-primary transition-colors"
                 data-testid="link-mobile-home"
               >
                 Home
-              </button>
-              <button
-                onClick={() => {
-                  scrollToSection('products');
-                  setMobileMenuOpen(false);
-                }}
-                className="text-sm font-medium hover:text-primary transition-colors text-left"
+              </a>
+              <a
+                href="/#products"
+                className="text-sm font-medium hover:text-primary transition-colors"
                 data-testid="link-mobile-products"
               >
                 Products
-              </button>
-              <button
-                onClick={() => {
-                  scrollToSection('categories');
-                  setMobileMenuOpen(false);
-                }}
-                className="text-sm font-medium hover:text-primary transition-colors text-left"
+              </a>
+              <a
+                href="/#categories"
+                className="text-sm font-medium hover:text-primary transition-colors"
                 data-testid="link-mobile-categories"
               >
                 Categories
-              </button>
+              </a>
             </nav>
           </div>
         )}
