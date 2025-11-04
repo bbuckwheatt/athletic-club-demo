@@ -1,4 +1,4 @@
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CartSheet } from "@/components/CartSheet";
@@ -6,6 +6,27 @@ import { useState } from "react";
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [location, setLocation] = useLocation();
+
+  const scrollToSection = (sectionId: string) => {
+    // If not on homepage, navigate there first
+    if (location !== '/') {
+      setLocation('/');
+      // Wait for navigation, then scroll
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    } else {
+      // Already on homepage, just scroll
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  };
 
   return (
     <>
@@ -28,12 +49,20 @@ export function Header() {
               <Link href="/" className="text-sm font-medium hover:text-primary transition-colors" data-testid="link-nav-home">
                 Home
               </Link>
-              <Link href="/#products" className="text-sm font-medium hover:text-primary transition-colors" data-testid="link-nav-products">
+              <button
+                onClick={() => scrollToSection('products')}
+                className="text-sm font-medium hover:text-primary transition-colors cursor-pointer"
+                data-testid="link-nav-products"
+              >
                 Products
-              </Link>
-              <Link href="/#categories" className="text-sm font-medium hover:text-primary transition-colors" data-testid="link-nav-categories">
+              </button>
+              <button
+                onClick={() => scrollToSection('categories')}
+                className="text-sm font-medium hover:text-primary transition-colors cursor-pointer"
+                data-testid="link-nav-categories"
+              >
                 Categories
-              </Link>
+              </button>
             </nav>
 
             <div className="flex items-center gap-4">
@@ -64,22 +93,26 @@ export function Header() {
               >
                 Home
               </Link>
-              <Link
-                href="/#products"
-                className="text-sm font-medium hover:text-primary transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
+              <button
+                onClick={() => {
+                  scrollToSection('products');
+                  setMobileMenuOpen(false);
+                }}
+                className="text-sm font-medium hover:text-primary transition-colors text-left"
                 data-testid="link-mobile-products"
               >
                 Products
-              </Link>
-              <Link
-                href="/#categories"
-                className="text-sm font-medium hover:text-primary transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
+              </button>
+              <button
+                onClick={() => {
+                  scrollToSection('categories');
+                  setMobileMenuOpen(false);
+                }}
+                className="text-sm font-medium hover:text-primary transition-colors text-left"
                 data-testid="link-mobile-categories"
               >
                 Categories
-              </Link>
+              </button>
             </nav>
           </div>
         )}
