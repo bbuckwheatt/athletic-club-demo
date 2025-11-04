@@ -6,6 +6,8 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { useCart } from "@/contexts/CartContext";
+import { useToast } from "@/hooks/use-toast";
 import { Check, Truck, Shield, RotateCcw, ChevronLeft } from "lucide-react";
 import summitImage from "@assets/generated_images/Summit_Fire_Pit_Product_c2790bd4.png";
 import bonfireImage from "@assets/generated_images/Bonfire_Fire_Pit_Product_1af6c87a.png";
@@ -132,6 +134,25 @@ const products: Record<string, Product> = {
 export default function ProductPage() {
   const [, params] = useRoute("/product/:slug");
   const product = params?.slug ? products[params.slug] : null;
+  const { addToCart } = useCart();
+  const { toast } = useToast();
+
+  const handleAddToCart = () => {
+    if (!product) return;
+    
+    addToCart({
+      productId: product.id,
+      slug: product.slug,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+    });
+    
+    toast({
+      title: "Added to cart",
+      description: `${product.name} has been added to your cart.`,
+    });
+  };
 
   if (!product) {
     return (
@@ -219,7 +240,12 @@ export default function ProductPage() {
                 <Separator className="my-6" />
 
                 <div className="space-y-4 mb-8">
-                  <Button size="lg" className="w-full text-lg py-6" data-testid="button-add-to-cart">
+                  <Button 
+                    size="lg" 
+                    className="w-full text-lg py-6" 
+                    onClick={handleAddToCart}
+                    data-testid="button-add-to-cart"
+                  >
                     Add to Cart
                   </Button>
                   <Button size="lg" variant="outline" className="w-full text-lg py-6" data-testid="button-learn-more">

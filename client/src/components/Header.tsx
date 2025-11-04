@@ -1,6 +1,7 @@
 import { Link } from "wouter";
-import { ShoppingCart, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { CartSheet } from "@/components/CartSheet";
 import { useState } from "react";
 
 export function Header() {
@@ -36,10 +37,7 @@ export function Header() {
             </nav>
 
             <div className="flex items-center gap-4">
-              <Button size="icon" variant="ghost" className="relative" data-testid="button-cart">
-                <ShoppingCart className="h-5 w-5" />
-                <span className="sr-only">Shopping Cart</span>
-              </Button>
+              <CartSheet />
 
               <Button
                 size="icon"

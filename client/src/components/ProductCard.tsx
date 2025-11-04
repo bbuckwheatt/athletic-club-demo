@@ -2,6 +2,8 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { useCart } from "@/contexts/CartContext";
+import { useToast } from "@/hooks/use-toast";
 import type { Product } from "@shared/schema";
 
 interface ProductCardProps {
@@ -10,6 +12,23 @@ interface ProductCardProps {
 
 export function ProductCard({ product }: ProductCardProps) {
   const savings = product.originalPrice ? product.originalPrice - product.price : 0;
+  const { addToCart } = useCart();
+  const { toast } = useToast();
+
+  const handleAddToCart = () => {
+    addToCart({
+      productId: product.id,
+      slug: product.slug,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+    });
+    
+    toast({
+      title: "Added to cart",
+      description: `${product.name} has been added to your cart.`,
+    });
+  };
 
   return (
     <Card className="overflow-hidden hover-elevate transition-all duration-300 h-full flex flex-col" data-testid={`card-product-${product.id}`}>
@@ -57,7 +76,12 @@ export function ProductCard({ product }: ProductCardProps) {
       </CardContent>
 
       <CardFooter className="p-6 pt-0">
-        <Button className="w-full" size="lg" data-testid={`button-add-cart-${product.id}`}>
+        <Button 
+          className="w-full" 
+          size="lg" 
+          onClick={handleAddToCart}
+          data-testid={`button-add-cart-${product.id}`}
+        >
           Add to Cart
         </Button>
       </CardFooter>
