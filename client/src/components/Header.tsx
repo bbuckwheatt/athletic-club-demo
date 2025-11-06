@@ -1,7 +1,7 @@
-import { Menu, X } from "lucide-react";
+import { Menu, X, Dumbbell } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { CartSheet } from "@/components/CartSheet";
 import { useState } from "react";
+import logoImage from "@assets/agent_profile_logo_1762395854388.png";
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -10,7 +10,7 @@ export function Header() {
     <>
       <div className="bg-primary text-primary-foreground py-2 text-center text-sm font-medium">
         <div className="container mx-auto px-4">
-          Give the gift of gathering. Shop our best holiday deals all season long.
+          Elevate Your Fitness. Join the Needham Athletic Club Community.
         </div>
       </div>
 
@@ -19,11 +19,12 @@ export function Header() {
           <div className="flex items-center justify-between h-16">
             <a
               href="/"
-              className="flex items-center gap-2 hover-elevate active-elevate-2 rounded-md px-3 py-2 -mx-3 -my-2"
+              className="flex items-center gap-3 hover-elevate active-elevate-2 rounded-md px-3 py-2 -mx-3 -my-2"
               data-testid="link-home"
             >
-              <div className="text-2xl font-bold text-primary">
-                Solo Stove
+              <img src={logoImage} alt="Athletic Club" className="h-10 w-10" />
+              <div className="text-xl font-bold text-primary">
+                Needham Athletic Club
               </div>
             </a>
 
@@ -36,23 +37,30 @@ export function Header() {
                 Home
               </a>
               <a
-                href="/#products"
+                href="/#features"
                 className="text-sm font-medium hover:text-primary transition-colors"
-                data-testid="link-nav-products"
+                data-testid="link-nav-features"
               >
-                Products
+                Features
               </a>
               <a
                 href="/#categories"
                 className="text-sm font-medium hover:text-primary transition-colors"
                 data-testid="link-nav-categories"
               >
-                Categories
+                Activities
               </a>
             </nav>
 
             <div className="flex items-center gap-4">
-              <CartSheet />
+              <Button
+                variant="default"
+                size="sm"
+                className="hidden md:flex"
+                data-testid="button-join"
+              >
+                Join Now
+              </Button>
 
               <Button
                 size="icon"
@@ -79,19 +87,27 @@ export function Header() {
                 Home
               </a>
               <a
-                href="/#products"
+                href="/#features"
                 className="text-sm font-medium hover:text-primary transition-colors"
-                data-testid="link-mobile-products"
+                data-testid="link-mobile-features"
               >
-                Products
+                Features
               </a>
               <a
                 href="/#categories"
                 className="text-sm font-medium hover:text-primary transition-colors"
                 data-testid="link-mobile-categories"
               >
-                Categories
+                Activities
               </a>
+              <Button
+                variant="default"
+                size="sm"
+                className="w-full"
+                data-testid="button-join-mobile"
+              >
+                Join Now
+              </Button>
             </nav>
           </div>
         )}

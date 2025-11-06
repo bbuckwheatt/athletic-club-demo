@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Truck, Shield, RotateCcw, CreditCard } from "lucide-react";
+import { Clock, MapPin, Phone, Mail } from "lucide-react";
 
 export function Footer() {
   return (
@@ -9,40 +9,40 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-2">
-              <Truck className="h-6 w-6 text-primary" />
+              <Clock className="h-6 w-6 text-primary" />
               <div>
-                <h3 className="font-semibold text-sm">Free Shipping</h3>
-                <p className="text-xs text-muted-foreground">On orders $199+</p>
+                <h3 className="font-semibold text-sm">Hours</h3>
+                <p className="text-xs text-muted-foreground">Mon-Fri: 5am-10pm</p>
               </div>
             </div>
           </div>
 
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-2">
-              <Shield className="h-6 w-6 text-primary" />
+              <MapPin className="h-6 w-6 text-primary" />
               <div>
-                <h3 className="font-semibold text-sm">Industry Leading Warranty</h3>
-                <p className="text-xs text-muted-foreground">Built to last</p>
+                <h3 className="font-semibold text-sm">Location</h3>
+                <p className="text-xs text-muted-foreground">Needham, MA</p>
               </div>
             </div>
           </div>
 
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-2">
-              <RotateCcw className="h-6 w-6 text-primary" />
+              <Phone className="h-6 w-6 text-primary" />
               <div>
-                <h3 className="font-semibold text-sm">30-Day Returns</h3>
-                <p className="text-xs text-muted-foreground">100% satisfaction</p>
+                <h3 className="font-semibold text-sm">Contact</h3>
+                <p className="text-xs text-muted-foreground">(555) 123-4567</p>
               </div>
             </div>
           </div>
 
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-2">
-              <CreditCard className="h-6 w-6 text-primary" />
+              <Mail className="h-6 w-6 text-primary" />
               <div>
-                <h3 className="font-semibold text-sm">Flexible Payment</h3>
-                <p className="text-xs text-muted-foreground">Buy now, pay later</p>
+                <h3 className="font-semibold text-sm">Email</h3>
+                <p className="text-xs text-muted-foreground">info@needhamac.com</p>
               </div>
             </div>
           </div>
@@ -51,26 +51,26 @@ export function Footer() {
         <div className="border-t border-border pt-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             <div>
-              <h3 className="font-bold text-lg mb-4">Solo Stove</h3>
+              <h3 className="font-bold text-lg mb-4">Needham Athletic Club</h3>
               <p className="text-sm text-muted-foreground mb-4">
-                Transform your backyard into the perfect gathering place with our innovative smokeless fire pits and outdoor gear.
+                Your premier destination for fitness, wellness, and community in Needham, MA. Elevate your lifestyle with our world-class facilities.
               </p>
             </div>
 
             <div>
               <h3 className="font-semibold mb-4">Quick Links</h3>
               <ul className="space-y-2 text-sm">
-                <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-firepits">Fire Pits</a></li>
-                <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-pizzaovens">Pizza Ovens</a></li>
-                <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-griddles">Griddles</a></li>
-                <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-accessories">Accessories</a></li>
+                <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-tennis">Tennis</a></li>
+                <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-pool">Pool</a></li>
+                <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-fitness">Fitness</a></li>
+                <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-pickleball">Pickleball</a></li>
               </ul>
             </div>
 
             <div>
-              <h3 className="font-semibold mb-4">Stay In The Know</h3>
+              <h3 className="font-semibold mb-4">Stay Connected</h3>
               <p className="text-sm text-muted-foreground mb-4">
-                Join us around the fire for exclusive savings and new releases.
+                Subscribe to receive updates on events, classes, and club news.
               </p>
               <div className="flex gap-2">
                 <Input
@@ -85,7 +85,7 @@ export function Footer() {
           </div>
 
           <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
-            <p>© Solo Stove, 2025 | 1001 Mustang Dr. Grapevine, TX 76051</p>
+            <p>© Needham Athletic Club, 2025 | Needham, MA</p>
             <div className="flex gap-4">
               <a href="#" className="hover:text-primary transition-colors" data-testid="link-footer-privacy">Privacy Policy</a>
               <a href="#" className="hover:text-primary transition-colors" data-testid="link-footer-terms">Terms & Conditions</a>

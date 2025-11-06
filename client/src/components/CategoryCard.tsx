@@ -19,7 +19,7 @@ export function CategoryCard({ name, icon: Icon, count }: CategoryCardProps) {
             {name}
           </h3>
           {count !== undefined && (
-            <p className="text-sm text-muted-foreground">{count} products</p>
+            <p className="text-sm text-muted-foreground">{count} facilities</p>
           )}
         </div>
       </div>
