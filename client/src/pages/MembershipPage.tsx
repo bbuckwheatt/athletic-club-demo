@@ -131,6 +131,7 @@ export default function MembershipPage() {
                   <Button 
                     className="w-full" 
                     variant={tier.popular ? "default" : "outline"}
+                    onClick={() => window.location.href = '/contact'}
                     data-testid={`button-join-${tier.name.toLowerCase()}`}
                   >
                     Get Started

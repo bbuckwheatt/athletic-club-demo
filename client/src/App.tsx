@@ -8,6 +8,7 @@ import HomePage from "@/pages/HomePage";
 import FeaturePage from "@/pages/FeaturePage";
 import MembershipPage from "@/pages/MembershipPage";
 import FAQPage from "@/pages/FAQPage";
+import ContactPage from "@/pages/ContactPage";
 import LoginPage from "@/pages/LoginPage";
 import AdminPage from "@/pages/AdminPage";
 import NotFound from "@/pages/not-found";
@@ -67,6 +68,7 @@ function Router() {
       <Route path="/feature/:slug" component={FeaturePage} />
       <Route path="/membership" component={MembershipPage} />
       <Route path="/faq" component={FAQPage} />
+      <Route path="/contact" component={ContactPage} />
       <Route path="/login" component={LoginPage} />
       <Route path="/admin" component={AdminPage} />
       <Route component={NotFound} />
