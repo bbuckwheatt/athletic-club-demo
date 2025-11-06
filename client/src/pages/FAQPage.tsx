@@ -5,6 +5,9 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { ChevronLeft } from "lucide-react";
+import { Link } from "wouter";
 
 export default function FAQPage() {
   const faqCategories = [
@@ -60,6 +63,16 @@ export default function FAQPage() {
 
   return (
     <div className="min-h-screen bg-background">
+      {/* Back Button */}
+      <div className="container mx-auto px-4 pt-24 pb-4">
+        <Link href="/">
+          <Button variant="ghost" data-testid="button-back-home">
+            <ChevronLeft className="h-4 w-4 mr-2" />
+            Back to Home
+          </Button>
+        </Link>
+      </div>
+      
       {/* Hero Section */}
       <section className="relative bg-primary text-primary-foreground py-20">
         <div className="container mx-auto px-4">
