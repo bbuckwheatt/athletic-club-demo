@@ -52,11 +52,10 @@ export function Header() {
               </a>
             </nav>
 
-            <div className="flex items-center gap-4">
+            <div className="flex items-center">
               <Button
                 variant="default"
-                size="sm"
-                className="hidden md:flex"
+                className="hidden md:inline-flex"
                 data-testid="button-join"
               >
                 Join Now
