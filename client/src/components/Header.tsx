@@ -57,6 +57,13 @@ export function Header() {
               >
                 FAQ
               </a>
+              <a
+                href="/contact"
+                className="text-sm font-medium hover:text-primary transition-colors"
+                data-testid="link-nav-contact"
+              >
+                Contact
+              </a>
             </nav>
 
             <div className="flex items-center gap-3">
@@ -122,6 +129,13 @@ export function Header() {
                 data-testid="link-mobile-faq"
               >
                 FAQ
+              </a>
+              <a
+                href="/contact"
+                className="text-sm font-medium hover:text-primary transition-colors"
+                data-testid="link-mobile-contact"
+              >
+                Contact
               </a>
               <Button
                 variant="outline"

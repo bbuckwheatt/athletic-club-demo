@@ -161,10 +161,7 @@ export default function FeaturePage() {
   }
 
   const handleContactClick = () => {
-    toast({
-      title: "Contact Request",
-      description: "A membership consultant will contact you shortly.",
-    });
+    window.location.href = '/contact';
   };
 
   return (
