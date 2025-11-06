@@ -67,6 +67,10 @@ export default function MembershipPage() {
     {
       title: "Childcare Services",
       description: "Complimentary access to our Kids Club for family memberships"
+    },
+    {
+      title: "Pickleball Courts",
+      description: "Four dedicated courts for open play, leagues, and tournaments"
     }
   ];
 
