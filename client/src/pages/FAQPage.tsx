@@ -64,7 +64,7 @@ export default function FAQPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Back Button */}
-      <div className="container mx-auto px-4 pt-24 pb-4">
+      <div className="container mx-auto px-4 pt-6 pb-2">
         <Link href="/">
           <Button variant="ghost" data-testid="button-back-home">
             <ChevronLeft className="h-4 w-4 mr-2" />
