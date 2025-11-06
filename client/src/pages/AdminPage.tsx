@@ -44,9 +44,14 @@ export default function AdminPage() {
       <header className="border-b border-border p-4">
         <div className="container mx-auto flex items-center justify-between">
           <h1 className="text-xl font-bold">Admin Panel</h1>
-          <Button variant="outline" onClick={handleLogout} data-testid="button-logout">
-            Logout
-          </Button>
+          <div className="flex items-center gap-3">
+            <Button variant="ghost" onClick={() => window.location.href = '/'} data-testid="button-home">
+              Home
+            </Button>
+            <Button variant="outline" onClick={handleLogout} data-testid="button-logout">
+              Logout
+            </Button>
+          </div>
         </div>
       </header>
       
