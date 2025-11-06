@@ -52,7 +52,16 @@ export function Header() {
               </a>
             </nav>
 
-            <div className="flex items-center">
+            <div className="flex items-center gap-3">
+              <Button
+                variant="outline"
+                className="hidden md:inline-flex"
+                onClick={() => window.location.href = '/login'}
+                data-testid="button-login-header"
+              >
+                Log In
+              </Button>
+              
               <Button
                 variant="default"
                 className="hidden md:inline-flex"
@@ -99,6 +108,16 @@ export function Header() {
               >
                 Activities
               </a>
+              <Button
+                variant="outline"
+                size="sm"
+                className="w-full"
+                onClick={() => window.location.href = '/login'}
+                data-testid="button-login-mobile"
+              >
+                Log In
+              </Button>
+              
               <Button
                 variant="default"
                 size="sm"
