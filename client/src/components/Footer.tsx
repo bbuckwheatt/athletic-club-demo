@@ -81,7 +81,12 @@ export function Footer() {
                   className="flex-1"
                   data-testid="input-newsletter-email"
                 />
-                <Button data-testid="button-newsletter-submit">Subscribe</Button>
+                <Button 
+                  onClick={() => window.location.href = '/contact'}
+                  data-testid="button-newsletter-submit"
+                >
+                  Subscribe
+                </Button>
               </div>
             </div>
           </div>
@@ -89,8 +94,8 @@ export function Footer() {
           <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
             <p>© Needham Athletic Club, 2025 | Needham, MA</p>
             <div className="flex gap-4">
-              <a href="#" className="hover:text-primary transition-colors" data-testid="link-footer-privacy">Privacy Policy</a>
-              <a href="#" className="hover:text-primary transition-colors" data-testid="link-footer-terms">Terms & Conditions</a>
+              <a href="/contact" className="hover:text-primary transition-colors" data-testid="link-footer-privacy">Privacy Policy</a>
+              <a href="/contact" className="hover:text-primary transition-colors" data-testid="link-footer-terms">Terms & Conditions</a>
             </div>
           </div>
         </div>

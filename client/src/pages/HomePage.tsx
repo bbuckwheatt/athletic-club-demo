@@ -126,13 +126,19 @@ export default function HomePage() {
               Experience world-class fitness, wellness, and community at Needham's premier athletic club. Your journey to better health starts here.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="text-lg px-8 py-6" data-testid="button-hero-join">
+              <Button 
+                size="lg" 
+                className="text-lg px-8 py-6" 
+                onClick={() => window.location.href = '/membership'}
+                data-testid="button-hero-join"
+              >
                 Join Now
               </Button>
               <Button
                 size="lg"
                 variant="outline"
                 className="text-lg px-8 py-6 bg-white/10 backdrop-blur-md border-white/30 text-white hover:bg-white/20"
+                onClick={() => window.location.href = '/contact'}
                 data-testid="button-hero-tour"
               >
                 Schedule a Tour
@@ -192,7 +198,11 @@ export default function HomePage() {
                 <p className="text-lg text-muted-foreground mb-8">
                   Whether you're looking to improve your tennis game, swim laps, work with a personal trainer, or enjoy our social events, we provide the perfect environment for every member of your family.
                 </p>
-                <Button size="lg" data-testid="button-learn-more">
+                <Button 
+                  size="lg" 
+                  onClick={() => window.location.href = '/membership'}
+                  data-testid="button-learn-more"
+                >
                   Learn More About Our Facilities
                 </Button>
               </div>
@@ -262,7 +272,12 @@ export default function HomePage() {
             <p className="text-lg mb-8 max-w-3xl mx-auto">
               Join the Needham Athletic Club community and gain access to world-class facilities, expert instruction, and a supportive environment. Special membership rates available now.
             </p>
-            <Button size="lg" variant="default" data-testid="button-membership">
+            <Button 
+              size="lg" 
+              variant="default" 
+              onClick={() => window.location.href = '/membership'}
+              data-testid="button-membership"
+            >
               View Membership Options
             </Button>
           </div>

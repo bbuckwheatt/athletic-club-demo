@@ -190,7 +190,11 @@ export default function MembershipPage() {
                 or a free month of membership!
               </p>
               <div className="pt-4">
-                <Button size="lg" data-testid="button-contact-us">
+                <Button 
+                  size="lg" 
+                  onClick={() => window.location.href = '/contact'}
+                  data-testid="button-contact-us"
+                >
                   Contact Us to Join
                 </Button>
               </div>
