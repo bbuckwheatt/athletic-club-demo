@@ -44,11 +44,18 @@ export function Header() {
                 Features
               </a>
               <a
-                href="/#categories"
+                href="/membership"
                 className="text-sm font-medium hover:text-primary transition-colors"
-                data-testid="link-nav-categories"
+                data-testid="link-nav-membership"
               >
-                Activities
+                Membership
+              </a>
+              <a
+                href="/faq"
+                className="text-sm font-medium hover:text-primary transition-colors"
+                data-testid="link-nav-faq"
+              >
+                FAQ
               </a>
             </nav>
 
@@ -65,6 +72,7 @@ export function Header() {
               <Button
                 variant="default"
                 className="hidden md:inline-flex"
+                onClick={() => window.location.href = '/membership'}
                 data-testid="button-join"
               >
                 Join Now
@@ -102,11 +110,18 @@ export function Header() {
                 Features
               </a>
               <a
-                href="/#categories"
+                href="/membership"
                 className="text-sm font-medium hover:text-primary transition-colors"
-                data-testid="link-mobile-categories"
+                data-testid="link-mobile-membership"
               >
-                Activities
+                Membership
+              </a>
+              <a
+                href="/faq"
+                className="text-sm font-medium hover:text-primary transition-colors"
+                data-testid="link-mobile-faq"
+              >
+                FAQ
               </a>
               <Button
                 variant="outline"
@@ -122,6 +137,7 @@ export function Header() {
                 variant="default"
                 size="sm"
                 className="w-full"
+                onClick={() => window.location.href = '/membership'}
                 data-testid="button-join-mobile"
               >
                 Join Now

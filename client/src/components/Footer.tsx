@@ -60,10 +60,12 @@ export function Footer() {
             <div>
               <h3 className="font-semibold mb-4">Quick Links</h3>
               <ul className="space-y-2 text-sm">
-                <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-tennis">Tennis</a></li>
-                <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-pool">Pool</a></li>
-                <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-fitness">Fitness</a></li>
-                <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-pickleball">Pickleball</a></li>
+                <li><a href="/feature/tennis" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-tennis">Tennis</a></li>
+                <li><a href="/feature/pool" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-pool">Pool</a></li>
+                <li><a href="/feature/fitness" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-fitness">Fitness</a></li>
+                <li><a href="/feature/pickleball" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-pickleball">Pickleball</a></li>
+                <li><a href="/membership" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-membership">Membership</a></li>
+                <li><a href="/faq" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-faq">FAQ</a></li>
               </ul>
             </div>
 
