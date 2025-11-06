@@ -51,7 +51,7 @@ export default function AdminPage() {
       </header>
       
       <main className="flex-1 flex items-center justify-center p-4">
-        <div id="customgpt_chat" data-testid="div-custom-chat"></div>
+        <div id="customgpt_chat" data-testid="div-custom-chat" className="w-full max-w-4xl h-[600px]"></div>
       </main>
     </div>
   );
