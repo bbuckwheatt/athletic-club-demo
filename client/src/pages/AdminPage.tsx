@@ -50,8 +50,16 @@ export default function AdminPage() {
         </div>
       </header>
       
-      <main className="flex-1 flex items-center justify-center p-4">
-        <div id="customgpt_chat" data-testid="div-custom-chat" className="w-full max-w-4xl h-[600px]"></div>
+      <main className="flex-1 flex items-center justify-center p-8">
+        <div className="w-full max-w-5xl">
+          <div className="mb-6">
+            <h2 className="text-2xl font-bold mb-2">AI Assistant</h2>
+            <p className="text-muted-foreground">Chat with our custom AI agent for administrative support</p>
+          </div>
+          <div className="border border-border rounded-lg shadow-lg bg-card p-4">
+            <div id="customgpt_chat" data-testid="div-custom-chat" className="w-full h-[700px]"></div>
+          </div>
+        </div>
       </main>
     </div>
   );
