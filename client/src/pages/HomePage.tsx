@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { FeatureCard } from "@/components/FeatureCard";
@@ -94,6 +95,14 @@ const categories = [
 ];
 
 export default function HomePage() {
+  useEffect(() => {
+    document.title = "Needham Athletic Club - Home | Premium Fitness & Wellness";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Discover world-class fitness and wellness at Needham Athletic Club. Explore our championship tennis courts, Olympic pool, personal training, pickleball courts, and wellness programs.');
+    }
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />

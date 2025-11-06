@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useRoute, Link } from "wouter";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -128,6 +129,16 @@ export default function FeaturePage() {
   const { toast } = useToast();
   
   const feature = params?.slug ? features[params.slug] : null;
+
+  useEffect(() => {
+    if (feature) {
+      document.title = `${feature.name} - Needham Athletic Club`;
+      const metaDescription = document.querySelector('meta[name="description"]');
+      if (metaDescription) {
+        metaDescription.setAttribute('content', `${feature.description} ${feature.capacity ? `Capacity: ${feature.capacity}.` : ''} Located at Needham Athletic Club in Needham, MA.`);
+      }
+    }
+  }, [feature]);
 
   if (!feature) {
     return (

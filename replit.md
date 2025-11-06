@@ -1,8 +1,8 @@
-# Solo Stove E-Commerce Demo
+# Needham Athletic Club - Informational Website
 
 ## Overview
 
-This is a static e-commerce demonstration site inspired by Solo Stove's outdoor lifestyle brand. The application showcases smokeless fire pits, pizza ovens, griddles, and outdoor gear with a focus on product-first visual hierarchy and conversion-oriented design patterns. Built as a modern React single-page application with Express backend, it demonstrates e-commerce UI/UX best practices without implementing actual transaction processing.
+This is an informational website for the Needham Athletic Club in Needham, MA. The application showcases club amenities including tennis courts, swimming pools, personal training, pickleball courts, and wellness programs. Built as a modern React single-page application with Express backend, it provides members and prospective members with detailed information about club facilities, programs, and services.
 
 ## User Preferences
 
@@ -26,23 +26,14 @@ Preferred communication style: Simple, everyday language.
 
 **State Management**
 - TanStack Query (React Query) for server state management
-- React Context API for shopping cart state management (CartContext)
-- localStorage for cart persistence across page refreshes
+- Client-side state management for feature display
 - Query client configured with conservative refetch policies (staleTime: Infinity, no window focus refetch)
 
-**Shopping Cart System**
-- Client-side only implementation (no backend required)
-- CartContext provides: addToCart, removeFromCart, updateQuantity, clearCart, getItemCount, getSubtotal
-- localStorage persistence with key 'solostove-cart' for cart data
-- CartSheet component (Radix UI Sheet) displays cart items, quantity controls, subtotal
-- Real-time cart count badge in header
-- Toast notifications for cart actions
-- Clickable cart items navigate to product detail pages
-
 **Data Layer**
-- Static product data defined in component files (no database queries for demo)
-- Zod schemas for runtime type validation of product/category/cart data
+- Static club feature data defined in component files (no database queries for informational site)
+- Zod schemas for runtime type validation of feature/activity/amenity data
 - Type-safe data models shared between client and server via `@shared` directory
+- Feature types include: tennis, pool, fitness, pickleball, wellness, social events
 
 ### Backend Architecture
 
@@ -66,15 +57,20 @@ Preferred communication style: Simple, everyday language.
 ### Design System
 
 **Visual Hierarchy**
-- Product-first layouts with hero imagery
-- Warm outdoor lifestyle aesthetic inspired by Solo Stove brand
-- Card-based patterns influenced by Airbnb and Shopify stores
+- Feature-first layouts with hero imagery
+- Professional athletic club aesthetic with navy blue and orange branding
+- Card-based patterns for amenity showcase
 - Responsive breakpoints: mobile-first approach with md/lg variants
+
+**Color Scheme**
+- Primary: Navy Blue (210deg, 65%, 30%) - represents professionalism and trust
+- Accent: Orange (27deg, 90%, 55%) - represents energy and wellness
+- Color system matches the Needham Athletic Club logo
 
 **Typography Scale**
 - Hero: 5xl → 7xl responsive
 - Section titles: 3xl → 5xl responsive  
-- Product names: 2xl → 3xl responsive
+- Feature names: 2xl → 3xl responsive
 - Body text: base with lg variants
 - Consistent font weights: 400 (regular), 500 (medium), 600 (semibold), 700 (bold)
 
