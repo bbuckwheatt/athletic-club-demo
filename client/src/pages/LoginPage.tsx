@@ -19,14 +19,6 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-muted p-4">
-      <Button
-        variant="ghost"
-        className="absolute top-4 left-4"
-        onClick={() => window.location.href = '/'}
-        data-testid="button-home"
-      >
-        ← Home
-      </Button>
       <Card className="w-full max-w-md">
         <CardHeader>
           <CardTitle className="text-2xl">Admin Login</CardTitle>
@@ -62,6 +54,15 @@ export default function LoginPage() {
               Login
             </Button>
           </form>
+          <div className="mt-4 text-center">
+            <button
+              onClick={() => window.location.href = '/'}
+              className="text-sm text-muted-foreground hover:text-primary transition-colors"
+              data-testid="button-home"
+            >
+              ← Back to Home
+            </button>
+          </div>
         </CardContent>
       </Card>
     </div>
