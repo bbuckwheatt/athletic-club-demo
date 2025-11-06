@@ -182,20 +182,18 @@ export default function FeaturePage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             <div>
-              <div className="sticky top-24">
-                <div className="relative rounded-2xl overflow-hidden bg-muted mb-6">
-                  <img
-                    src={feature.image}
-                    alt={feature.name}
-                    className="w-full h-auto"
-                    data-testid="img-feature-main"
-                  />
-                  {feature.badge && (
-                    <Badge className="absolute top-6 left-6 text-base px-4 py-2" data-testid="badge-feature">
-                      {feature.badge}
-                    </Badge>
-                  )}
-                </div>
+              <div className="relative rounded-2xl overflow-hidden bg-muted mb-6">
+                <img
+                  src={feature.image}
+                  alt={feature.name}
+                  className="w-full h-auto"
+                  data-testid="img-feature-main"
+                />
+                {feature.badge && (
+                  <Badge className="absolute top-6 left-6 text-base px-4 py-2" data-testid="badge-feature">
+                    {feature.badge}
+                  </Badge>
+                )}
               </div>
             </div>
 
