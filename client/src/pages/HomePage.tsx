@@ -209,6 +209,51 @@ export default function HomePage() {
           </div>
         </section>
 
+        <section className="py-12 md:py-16 lg:py-24 bg-muted">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+                Why Choose Needham Athletic Club
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                More than just a gym - a complete lifestyle destination
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+              <div className="text-center p-6">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Activity className="h-8 w-8 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Premier Facilities</h3>
+                <p className="text-muted-foreground">
+                  Championship courts, Olympic pool, and state-of-the-art equipment for every fitness level
+                </p>
+              </div>
+              
+              <div className="text-center p-6">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Users className="h-8 w-8 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Expert Coaching</h3>
+                <p className="text-muted-foreground">
+                  Certified trainers and instructors dedicated to helping you reach your goals
+                </p>
+              </div>
+              
+              <div className="text-center p-6">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Heart className="h-8 w-8 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Community Focus</h3>
+                <p className="text-muted-foreground">
+                  Join a vibrant community of members who inspire and support each other
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="py-12 md:py-16 lg:py-24 bg-accent text-accent-foreground">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
