@@ -74,13 +74,13 @@ export default function FAQPage() {
       </div>
       
       {/* Hero Section */}
-      <section className="relative bg-primary text-primary-foreground py-20">
+      <section className="relative bg-primary text-primary-foreground py-12">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4" data-testid="text-faq-title">
+            <h1 className="text-3xl md:text-4xl font-bold mb-3" data-testid="text-faq-title">
               Frequently Asked Questions
             </h1>
-            <p className="text-lg md:text-xl opacity-90" data-testid="text-faq-subtitle">
+            <p className="text-base md:text-lg opacity-90" data-testid="text-faq-subtitle">
               Find answers to common questions about membership, facilities, and programs
             </p>
           </div>
@@ -90,20 +90,20 @@ export default function FAQPage() {
       {/* FAQ Content */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto space-y-8">
-            {faqCategories.map((category, categoryIndex) => (
-              <Card key={categoryIndex} data-testid={`card-faq-${category.category.toLowerCase().replace(/\s+/g, '-')}`}>
-                <CardHeader>
-                  <CardTitle className="text-2xl">{category.category}</CardTitle>
-                  <CardDescription>
-                    Common questions about {category.category.toLowerCase()}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <Accordion type="single" collapsible className="w-full">
-                    {category.questions.map((faq, faqIndex) => (
+          <div className="max-w-4xl mx-auto">
+            <Card data-testid="card-faq-all">
+              <CardHeader>
+                <CardTitle className="text-2xl">Common Questions</CardTitle>
+                <CardDescription>
+                  Everything you need to know about membership, facilities, and programs
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Accordion type="single" collapsible className="w-full">
+                  {faqCategories.flatMap((category, categoryIndex) => 
+                    category.questions.map((faq, faqIndex) => (
                       <AccordionItem 
-                        key={faqIndex} 
+                        key={`${categoryIndex}-${faqIndex}`} 
                         value={`item-${categoryIndex}-${faqIndex}`}
                         data-testid={`accordion-item-${categoryIndex}-${faqIndex}`}
                       >
@@ -114,11 +114,11 @@ export default function FAQPage() {
                           {faq.answer}
                         </AccordionContent>
                       </AccordionItem>
-                    ))}
-                  </Accordion>
-                </CardContent>
-              </Card>
-            ))}
+                    ))
+                  )}
+                </Accordion>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>

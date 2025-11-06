@@ -83,13 +83,13 @@ export default function MembershipPage() {
       </div>
       
       {/* Hero Section */}
-      <section className="relative bg-primary text-primary-foreground py-20">
+      <section className="relative bg-primary text-primary-foreground py-12">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4" data-testid="text-membership-title">
+            <h1 className="text-3xl md:text-4xl font-bold mb-3" data-testid="text-membership-title">
               Membership Plans
             </h1>
-            <p className="text-lg md:text-xl opacity-90" data-testid="text-membership-subtitle">
+            <p className="text-base md:text-lg opacity-90" data-testid="text-membership-subtitle">
               Discover the perfect membership plan to fit your lifestyle and fitness goals
             </p>
           </div>
